@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "UINPhqC1Y88K59EMaG1uNQ2qowqaluRXhJ8eXfb8xAX7UO9eK0Lug5ZSILYqFWuLkdYtdat6Cd3jWSuZKMBBvw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ACER\\Desktop\\NashTech_Assignment\\NashTech_Assignment\\DucHanh_Assignment_MidTerm\\CommonModel\\CommonModel.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.grapecity.com/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}
