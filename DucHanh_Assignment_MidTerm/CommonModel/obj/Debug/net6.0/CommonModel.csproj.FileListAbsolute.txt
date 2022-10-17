@@ -1,0 +1,12 @@
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\bin\Debug\net6.0\CommonModel.deps.json
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\bin\Debug\net6.0\CommonModel.dll
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\bin\Debug\net6.0\CommonModel.pdb
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\obj\Debug\net6.0\CommonModel.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\obj\Debug\net6.0\CommonModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\obj\Debug\net6.0\CommonModel.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\obj\Debug\net6.0\CommonModel.AssemblyInfo.cs
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\obj\Debug\net6.0\CommonModel.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\obj\Debug\net6.0\CommonModel.dll
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\obj\Debug\net6.0\refint\CommonModel.dll
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\obj\Debug\net6.0\CommonModel.pdb
+C:\Users\ACER\Desktop\NashTech_Assignment\NashTech_Assignment\DucHanh_Assignment_MidTerm\CommonModel\obj\Debug\net6.0\ref\CommonModel.dll

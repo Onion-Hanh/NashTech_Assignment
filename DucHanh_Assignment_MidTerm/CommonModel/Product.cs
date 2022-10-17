@@ -19,6 +19,6 @@ namespace CommonModel
         public double Price { get; set; }
         public string CreatedDate { get; set; }
         public string UpdatedDate { get; set; }
-        public Catagory CatagoryId { get; set; }
+        public Catagory catagory { get; set; }
     }
 }
