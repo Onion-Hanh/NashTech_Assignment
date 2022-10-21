@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(DrugStoreDBContext))]
-    [Migration("20221017113411_v1")]
-    partial class v1
+    [Migration("20221021095520_CreateDatabase")]
+    partial class CreateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,10 +23,14 @@ namespace API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CommonModel.Catagory", b =>
+            modelBuilder.Entity("API.Models.Category", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -34,12 +38,16 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("cataogies");
+                    b.ToTable("categories");
                 });
 
-            modelBuilder.Entity("CommonModel.Product", b =>
+            modelBuilder.Entity("API.Models.Product", b =>
                 {
                     b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CategoryId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
@@ -79,26 +87,27 @@ namespace API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("catagoryId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("catagoryId");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("products");
                 });
 
-            modelBuilder.Entity("CommonModel.Product", b =>
+            modelBuilder.Entity("API.Models.Product", b =>
                 {
-                    b.HasOne("CommonModel.Catagory", "catagory")
-                        .WithMany()
-                        .HasForeignKey("catagoryId")
+                    b.HasOne("API.Models.Category", "Category")
+                        .WithMany("products")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("catagory");
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("API.Models.Category", b =>
+                {
+                    b.Navigation("products");
                 });
 #pragma warning restore 612, 618
         }

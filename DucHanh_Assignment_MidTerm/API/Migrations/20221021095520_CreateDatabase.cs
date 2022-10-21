@@ -4,20 +4,21 @@
 
 namespace API.Migrations
 {
-    public partial class v1 : Migration
+    public partial class CreateDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "cataogies",
+                name: "categories",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_cataogies", x => x.Id);
+                    table.PrimaryKey("PK_categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,23 +36,23 @@ namespace API.Migrations
                     Price = table.Column<double>(type: "float", nullable: false),
                     CreatedDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UpdatedDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    catagoryId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    CategoryId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_products", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_products_cataogies_catagoryId",
-                        column: x => x.catagoryId,
-                        principalTable: "cataogies",
+                        name: "FK_products_categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_products_catagoryId",
+                name: "IX_products_CategoryId",
                 table: "products",
-                column: "catagoryId");
+                column: "CategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -60,7 +61,7 @@ namespace API.Migrations
                 name: "products");
 
             migrationBuilder.DropTable(
-                name: "cataogies");
+                name: "categories");
         }
     }
 }
