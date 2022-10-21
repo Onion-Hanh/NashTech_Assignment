@@ -13,6 +13,7 @@
         public double Price { get; set; }
         public string CreatedDate { get; set; }
         public string UpdatedDate { get; set; }
+        public string CategoryId { get; set; }
         public Category category { get; set; }
     }
 }
