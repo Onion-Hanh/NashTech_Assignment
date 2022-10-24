@@ -4,46 +4,108 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Customers_Site</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Customers_Site.styles.css" asp-append-version="true" />
+    <!--Font-awesome-->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css"
+          integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/solid.min.css"
+          integrity="sha512-uj2QCZdpo8PSbRGL/g5mXek6HM/APd7k/B5Hx/rkVFPNOxAQMXD+t+bG4Zv8OAdUpydZTU3UHmyjjiHv2Ww0PA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+    <!-- Bootrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="~/css/layout.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Customers_Site</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <nav>
+            <ul>
+                <li><img src="~/lib/img/logo.jpg" /></li>
+                <li>
+                    <input class="nav-input form-control me-2" type="search" placeholder="Bạn đang tìm gì hôm nay..." aria-label="Search">
+                </li>
+                <li class="search_icon"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></li>
+                <li><a class="li_item" href="#giohang"><i class="fa-sharp fa-solid fa-cart-shopping li_icon"></i>Giỏ hàng </a></li>
+                <li><a class="li_item" href=""><i class="fa-solid fa-user li_icon"></i>Đăng nhập</a></li>
+                <li><a class="li_item" href="tel:+18006821"><i class="fa-solid fa-phone li_icon"></i>18006821</a></li>
+            </ul>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="content" style="clear:both">
+        @RenderBody()
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Customers_Site - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer>
+        <hr class="hr_blue">
+        <div class="footer-container">
+            <div class="row footer-top">
+                <div class="col">
+                    <span class="tieude">Về Pharmacity</span><br><br>
+                    Tại Pharmacity, mỗi dược sỹ luôn tận tâm phục vụ và được đào tạo để hoàn thành xuất sắc những sứ mệnh được giao.
+                    <br>
+                    <a class="timhieu" href="">Tìm hiểu thêm</a>
+                    <br><br>
+                    <span class="chuxanhdam">Trở thành nhà cung cấp</span>
+                    <br><br>
+                    Hỗ trợ đơn hàng doanh nghiệp:
+                    <a class="chuxanh" href="mailto: groupb2b@pharmacity.vn">groupb2b@pharmacity.vn</a>
+                </div>
+                <div class="col">
+                    <span class="tieude">Liên kết hữu ích</span><br><br>
+                    <a class="footer_a" href="">Câu hỏi thường gặp</a>
+                    <br>
+                    <a class="footer_a" href="">Tìm cửa hàng gần bạn</a>
+                    <br>
+                    <a class="footer_a" href="">Chính sách giao hàng</a>
+                    <br>
+                    <a class="footer_a" href="">Phương thức giao hàng</a>
+                    <br>
+                    <a class="footer_a" href="">Chính sách đổi trả</a>
+                    <br>
+                    <a class="footer_a" href="">Thể lệ chương trình thẻ thành viên</a>
+                    <br>
+                    <a class="footer_a" href="">Chính sách bảo mật</a>
+                    <br>
+                    <a class="footer_a" href="">Thông báo cổ đông</a>
+                </div>
+                <div class="col">
+                    <span class="tieude">Theo dõi chúng tôi trên</span><br><br>
+                    <a class="footer_a" href="https://www.facebook.com/PharmacityVN"><img src="~/lib/img/fb.jpg" />Facebook</a>
+                    <br>
+                    <a class="footer_a" href="https://www.youtube.com/channel/UC34rPqjyb_WCq6dMu2khYQA"><img src="~/lib/img/youtube.jpg" />Youtube</a>
+                    <br>
+                    <a class="footer_a" href="https://zalo.me/1123198001548302988?src=qr"><img src="~/lib/img/zalo.jpg" />Zalo</a>
+                    <br>
+                    <img class="anhlon" src="~/lib/img/congthuong.JPG" alt="">
+                    <br>
+                    <img class="anhlon" src="~/lib/img/khoa.JPG" alt="">
+                </div>
+                <div class="col">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.968509577082!2d106.69537831442258!3d10.813721761462038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528eafd202985%3A0xeb70091a58e68aeb!2zMjQ4QSBOxqEgVHJhbmcgTG9uZywgUGjGsOG7nW5nIDEyLCBCw6xuaCBUaOG6oW5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1664878179905!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
+        <hr>
+        <p class="footer-bottom">
+            Công Ty Cổ Phần Dược Phẩm Pharmacity
+            <br>
+            <br>
+            Trụ sở: 248A Nơ Trang Long, P.12, Q.Bình Thạnh, TP.Hồ Chí Minh.
+            <br>
+            Điện thoại: 1800 6821. Email:cskh@pharmacity.vn
+            <br>
+            <br>
+            GPDKKD: 0311770883
+            <br>
+            Do sở KH & ĐT TP.HCM cấp lần đầu ngày 05/05/2012, đăng ký thay đổi lần thứ: 49, ngày 20/01/2018.
+        </p>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!--Bootrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!--Font-awesome-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/regular.min.css"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
