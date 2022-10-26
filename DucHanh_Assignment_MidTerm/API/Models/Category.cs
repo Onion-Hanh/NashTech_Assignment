@@ -5,6 +5,6 @@
         public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        List<Product> products { get; set; }
+        public List<Product> products { get; set; }
     }
 }
