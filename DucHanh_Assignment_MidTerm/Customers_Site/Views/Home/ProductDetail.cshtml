@@ -1,0 +1,13 @@
+﻿<head>
+    <link href="~/css/productdetail.css" rel="stylesheet" />
+</head>
+<div>
+    <div>
+        <h2 class="product-detail-label">Chi Tiết Sản Phẩm</h2>
+        @await Component.InvokeAsync("ProductDetail", new {productId=ViewBag.productId})
+    </div>
+    <div>
+        <h2 class="product-rating-label">Đánh giá sản phẩm</h2>
+        @await Component.InvokeAsync("ProductRating", new {productId=ViewBag.productId})
+    </div>
+</div>

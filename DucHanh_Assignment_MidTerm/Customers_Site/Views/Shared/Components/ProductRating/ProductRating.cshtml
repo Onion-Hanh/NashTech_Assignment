@@ -1,0 +1,106 @@
+﻿@using CommonModel.Rating
+@using System.Globalization
+@model List<RatingDTO>
+<head>
+    <link href="~/css/productratingviewcomponent.css" rel="stylesheet" />   
+</head>
+<div class="product-label-container"><strong class="float-left">Sản phẩm:</strong>
+    @for (int i = 1; i <= (@ViewBag.numberOfStar / @ViewBag.numberOfRating);i++)
+    {       
+        <i class="fa-regular fa-star star star-check"></i>
+    }  
+    @if (@ViewBag.numberOfRating > 0 && @ViewBag.numberOfStar % @ViewBag.numberOfRating != 0)
+    {
+        <i class="fa-regular fa-star-half star star-check"></i>
+    }
+</div>
+<div class="clear"></div>
+<table class="evaluation-container">
+    <thead>
+        <tr>
+            <th colspan="2">Đánh giá của bạn</th>
+        </tr>
+    </thead>
+    <tbody>
+        <form action="@Url.Action("ProductRating","Home")" method="post">
+        <tr>
+            <td><strong>Sao:</strong></td>
+                @* <i id="star-1" class="fa-regular fa-star" style="float:left;margin-right:2px"></i>*@
+            <td>
+                <fieldset>
+                    <p class="float-left">
+                        <input type="radio" name="star" id="star-1" value="1" checked>
+                        <label for="star-1">1</label>
+                    </p>
+                    <p class="float-left">
+                        <input type="radio" name="star" id="star-2" value="2">
+                        <label for="star-2">2</label>
+                    </p>
+                    <p class="float-left">
+                        <input type="radio" name="star" id="star-3" value="3">
+                        <label for="star-3">3</label>
+                    </p>
+                    <p class="float-left">
+                        <input type="radio" name="star" id="star-4" value="4">
+                        <label for="star-4">4</label>
+                    </p>
+                    <p class="float-left">
+                        <input type="radio" name="star" id="star-5" value="5">
+                        <label for="star-5">5</label>
+                    </p>
+                </fieldset>
+            </td>
+        </tr>
+        <tr class="clear">
+            <td><strong><label for="comment">Đánh giá:</label></strong></td>
+            <td><textarea name="comment" id="comment" class="form-control" rows="4" cols="50"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit" class="btn btn-primary btn-evaluation">Đánh giá</button></td>
+        </tr>
+        </form>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th>Các đánh giá khác</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div class="comment-container">
+                    @foreach (var item in Model)
+                    {
+                        <div class="card card-comment">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <img class="customer-avatar" src="~/lib/img/customer_avatar.jpg" /><strong>
+                                        @if (item.CustomerId == "KH0001")
+                                        {
+                                            <span>Bạn (@item.Date)</span>
+                                        }
+                                        else
+                                        {
+                                            <span>@item.CustomerName (@item.Date)</span>
+                                        }
+                                    </strong>
+                                </h4>
+                                <h5 class="clear">
+                                    @for (int i = 0; i < @item.Stars; i++)
+                                    {
+                                        <i class="fa-regular fa-star star star-check" ></i>
+                                    }
+                                </h5>
+                                <p class="card-text clear">@item.Comment</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="clear"></div>

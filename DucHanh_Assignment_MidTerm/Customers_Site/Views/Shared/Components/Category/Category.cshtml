@@ -1,0 +1,13 @@
+﻿@using CommonModel.Category
+@model List<CategoryDTO>
+<head>
+    <link href="~/css/categoryviewcomponent.css" rel="stylesheet" />
+</head>
+@foreach (var item in Model)
+{
+    <div class="category-container">
+        <hr class="category-underline">
+        <h4 class="category-item-container"><a class="category-item" href="@Url.Action("Index","Home",new {categoryId=item.Id})">@item.Name</a></h4>
+    </div>
+}
+

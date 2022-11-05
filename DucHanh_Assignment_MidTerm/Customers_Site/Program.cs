@@ -1,7 +1,18 @@
-var builder = WebApplication.CreateBuilder(args);
 
+using Customers_Site.Interfaces;
+using Customers_Site.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+//Config api
+builder.Services.AddHttpClient("", option =>
+{
+    option.BaseAddress = new Uri(builder.Configuration["API"]);
+});
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ICategory_Service,Category_Service>();
+builder.Services.AddScoped<IProduct_Service, Product_Service>();
+builder.Services.AddScoped<IRating_Service, Rating_Service>();
 
 var app = builder.Build();
 

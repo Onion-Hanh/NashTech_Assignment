@@ -1,0 +1,66 @@
+﻿@using CommonModel.Product;
+@using CommonModel.Paging;
+@model List<ProductDTO>;
+@{
+    PagerDTO pager = new PagerDTO();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+<head>
+    <link href="~/css/productviewcomponent.css" rel="stylesheet" />
+</head>
+<h2 class="search-notification">@ViewBag.search</h2>
+ @foreach(var item in Model)
+ {  
+    <div class="col-4 card-container">
+        <div class="card card-item-container">
+            <a href="@Url.Action("ProductDetail","Home",new {productId=item.Id})">
+                <img class="product-image" src="~/lib/product_img/@item.Image" alt="" />
+            </a>              
+            <div class="card-body card-body-content">
+                <strong class="product-name" title="@item.Name">@item.Name</strong>
+                <br />
+                @if (item.Price.ToString().Length >= 4)
+                {
+                    string price = item.Price.ToString();
+                    int lap = 0;
+                    for (int i = price.Length - 1; i >= 0; i--)
+                    {
+                        lap++;
+                        if (lap % 4 == 0)
+                        {
+                            string a = price.Substring(i + 1, lap - 1);
+                            string b = price.Substring(0, i + 1);
+                            price = b + "," + a;
+                            i++;
+                        }
+                    }
+                    <strong class="product-pride">Giá bán: @price VNĐ</strong>
+                }
+                else
+                {
+                    <strong class="product-pride">Giá bán: @item.Price VNĐ</strong>
+                }
+                <br />
+                <a href="@Url.Action("ThemGioHang", "GioHang", new { ma = @item.Id })" class="btn btn-outline-secondary btn-shoppingcart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+            </div>
+        </div>
+    </div>
+ }
+ <div class="container">
+    @if (pager.TotalPages > 0)
+    {
+        <ul class="pagination justify-content-end">
+            @for(int i=pager.StartPage;i<=pager.EndPage;i++)
+            {
+                <li class="page-item @(i==pager.CurrentPage?"active":"")">
+                    <a class="page-link" href="@Url.Action("Index","Home",new{page=@i})">@i</a>
+                </li>
+            }           
+        </ul>
+    }
+</div>

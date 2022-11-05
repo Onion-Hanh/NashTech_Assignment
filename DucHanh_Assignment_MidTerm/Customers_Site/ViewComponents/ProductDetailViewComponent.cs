@@ -12,7 +12,7 @@ namespace Customers_Site.ViewComponents
         {
             _product_Service = product_Service; 
         }
-        public async Task<IViewComponentResult> InvokeAsync(string productId)
+        public async Task<IViewComponentResult> InvokeAsync(int productId)
         {
             product = new ProductDTO();
             product = await _product_Service.getProductById(productId);

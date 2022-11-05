@@ -10,7 +10,8 @@ namespace API.Mapping
     {
         public Product_Mapping()
         {
-            CreateMap<Product, ProductDTO>();
+            CreateMap<Product, ProductDTO>().ForMember(dto => dto.CategoryName, src => src.MapFrom(category => category.Category.Name));
+            CreateMap<Product, ProductAdminDTO>().ForMember(dto => dto.CategoryName, src => src.MapFrom(category => category.Category.Name));
         }
     }
 }

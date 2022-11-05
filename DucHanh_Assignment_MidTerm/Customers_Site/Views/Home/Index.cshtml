@@ -1,19 +1,21 @@
-﻿@{
-}
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.Name</td>
-            </tr>
-        }
-    </tbody>
-</table>
+﻿<head>
+    <link href="~/css/index.css" rel="stylesheet" />
+</head>
+<div class="container-fluid text-center content-container">
+    <div class="row content">
+        <div class="col-4 content-category-container">
+            <div class="content-detail">
+                <h2 class="title text-center title-detail">LOẠI SẢN PHẨM</h2>
+                @await Component.InvokeAsync("Category")
+            </div>     
+        </div>
+        <div class="col-8 content-product-container">
+            <div class="content-detail">
+                <h2 class="title text-center title-detail"">SẢN PHẨM</h2>
+                <div class="row product-list">                   
+                    @await Component.InvokeAsync("Product", new {categoryId=ViewBag.categoryId, productName=ViewBag.productName, page=ViewBag.page})                    
+                </div>
+            </div>                         
+        </div>
+    </div>
+</div>

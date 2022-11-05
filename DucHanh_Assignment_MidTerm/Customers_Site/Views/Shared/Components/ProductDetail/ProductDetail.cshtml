@@ -1,0 +1,69 @@
+﻿@using CommonModel.Product
+@using CommonModel.Category
+@model ProductDTO
+<head>
+    <!--Font-awesome-->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css"
+          integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/solid.min.css"
+          integrity="sha512-uj2QCZdpo8PSbRGL/g5mXek6HM/APd7k/B5Hx/rkVFPNOxAQMXD+t+bG4Zv8OAdUpydZTU3UHmyjjiHv2Ww0PA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+    <link href="~/css/productdetailviewcomponent.css" rel="stylesheet" />
+</head>
+<div>
+    <table class="table table-container">
+        <thead>
+            <tr>
+                <th scope="col">Hình ảnh</th>
+                <th scope="col">Thông tin chi tiết</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="11" class="product-img-container"> <img class="product-img" src="~/lib/product_img/@Model.Image" /></td>
+            </tr>
+            <tr><td><strong>Tên thuốc: </strong>@Html.DisplayFor(model => model.Name)</td></tr>
+            <tr><td><strong>Loại thuốc: </strong>@Html.DisplayFor(model => model.CategoryName)</td></tr>
+            <tr><td><strong>Hàm lượng: </strong>@Html.DisplayFor(model => model.Content)</td></tr>
+            <tr><td><strong>Công dụng: </strong>@Html.DisplayFor(model => model.Uses)</td></tr>
+            <tr><td><strong>Cách dùng: </strong>@Html.DisplayFor(model => model.Using)</td></tr>
+            <tr><td><strong>Chống chỉ định: </strong>@Html.DisplayFor(model => model.Contraindication)</td></tr>
+            <tr><td><strong>Mô tả: </strong>@Html.DisplayFor(model => model.Describe)</td></tr>
+            <tr><td><strong>Số lượng còn: </strong>@Html.DisplayFor(model => model.Quantity)</td></tr>
+            <tr>
+                <td>
+                    <strong>Giá bán: </strong>
+                    @if (Model.Price.ToString().Length >= 4)
+                    {
+                        string giaban = Model.Price.ToString();
+                        int lap = 0;
+                        for (int i = giaban.Length - 1; i >= 0; i--)
+                        {
+                            lap++;
+                            if (lap % 4 == 0)
+                            {
+                                string a = giaban.Substring(i + 1, lap - 1);
+                                string b = giaban.Substring(0, i + 1);
+                                giaban = b + "," + a;
+                                i++;
+                            }
+                        }
+                        <strong class="product-pride">@giaban VNĐ</strong>
+                    }
+                    else
+                    {
+                        <strong class="product-pride">@Model.Price VNĐ</strong>
+                    }
+                </td>
+            </tr>            
+        </tbody>
+    </table>
+    <a href="@Url.Action("ThemGioHang", "GioHang", new { productId = Model.Id })" class="btn btn-outline-secondary btn-shopping-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+</div>
+<!--Font-awesome-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/regular.min.css"></script>

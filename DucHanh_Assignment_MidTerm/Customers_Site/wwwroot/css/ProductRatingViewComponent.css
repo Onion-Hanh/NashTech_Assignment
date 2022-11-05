@@ -1,0 +1,43 @@
+﻿.product-label-container {
+    margin-left: 45%;
+}
+.float-left {
+    float: left;
+}
+
+.star-check {
+    color: orange;
+}
+.star {
+    float: left;
+    margin-right: 2px;
+    margin-top: 3px;
+}
+.clear {
+    clear: both;
+}
+.evaluation-container {
+    float: left;
+    margin-left: 10%;
+    margin-right: 40px;
+    width: 40%;
+}
+.btn-evaluation {
+    margin-top: 1%
+}
+.comment-container {
+    overflow: auto;
+    height: 260px;
+}
+.card-comment {
+    width: 30rem;
+    margin-bottom: 1%;
+}
+.customer-avatar {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    float: left;
+    margin-top: 2px;
+    margin-right: 5px;
+}

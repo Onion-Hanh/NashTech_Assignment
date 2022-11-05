@@ -1,0 +1,12 @@
+.form{
+    width: 800px;
+    height: auto;
+    padding: 10px;
+    border: solid 1px black;
+    border-radius: 10px;
+    text-align: left;
+    margin-left: 25%;
+}
+.center{
+    margin-left: 40%;
+}

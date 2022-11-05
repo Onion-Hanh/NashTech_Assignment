@@ -25,7 +25,7 @@ namespace Customers_Site.Services
             }
             return products;
         }
-        public async Task<List<ProductDTO>> getProductsByCategoryId(string categoryId)
+        public async Task<List<ProductDTO>> getProductsByCategoryId(int categoryId)
         {
             products = new List<ProductDTO>();
             var httpClient = _factory.CreateClient();
@@ -37,7 +37,7 @@ namespace Customers_Site.Services
             }
             return products;
         }
-        public async Task<ProductDTO> getProductById(string productId)
+        public async Task<ProductDTO> getProductById(int productId)
         {
             ProductDTO product = new ProductDTO();
             var httpClient = _factory.CreateClient();

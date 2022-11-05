@@ -1,0 +1,17 @@
+﻿.category-container {
+    padding-left: 18px;
+    width: 400px;
+}
+.category-underline {
+    width: auto;
+}
+.category-item-container {
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    text-align: left;
+}
+.category-item {
+    color: orange;
+    font-size: 22px;
+    text-decoration: none;
+}

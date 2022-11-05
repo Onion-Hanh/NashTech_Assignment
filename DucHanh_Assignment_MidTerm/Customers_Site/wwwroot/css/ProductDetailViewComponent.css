@@ -1,0 +1,22 @@
+﻿.table-container {
+    margin-left: 7%;
+    width: 86%;
+    font-size: 20px;
+    font-family: 'Times New Roman';
+}
+.product-img-container {
+    width: 380px;
+}
+.product-img {
+    width: 350px;
+    height: 350px;
+}
+.product-pride {
+    color: red;
+    font-weight: bold;
+}
+.btn-shopping-cart {
+    font-size: 17px;
+    margin-left: 46%;
+    font-family: 'Times New Roman';
+}

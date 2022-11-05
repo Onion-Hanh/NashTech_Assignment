@@ -1,0 +1,149 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+/*header*/
+header {
+    padding: 0px;
+    width: 100%;
+    height: 120px;
+    background-color: #0f62f9;
+    display: flex;
+    /*position: fixed;*/
+}
+
+nav {
+    margin: 30px auto;
+}
+
+    nav img {
+        width: 200px;
+        height: 70px;
+    }
+
+.nav-input {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 40px;
+    width: 400px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+.li_item {
+    margin-top: 3px;
+    color: white;
+}
+
+.li_icon {
+    margin-right: 8px;
+}
+
+li a:hover {
+    font-weight: bold;
+    color: yellow;
+}
+/*content*/
+.content {
+    clear:both;
+    margin-top:15px;
+}
+/*footer*/
+footer {
+    background-color: #EEEEEE;
+    height: auto;
+}
+
+.hr_blue {
+    width: 100%;
+    height: 15px;
+    background-color: #0f62f9;
+}
+
+hr {
+    clear: both;
+    width: 1300px;
+    margin: 20px auto;
+}
+
+.footer-container {
+    margin-left: 65px;
+    margin-right: 65px;
+}
+
+.col {
+    text-align: justify;
+}
+.map-container {
+    width: 600px;
+    height: 450px;
+    border:0;
+}
+.tieude {
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.timhieu {
+    text-decoration: underline;
+    color: blue;
+}
+
+.footer_a {
+    text-decoration: none;
+    color: black;
+    line-height: 1.6;
+}
+
+a.chuxanh {
+    color: blue;
+    text-decoration: none;
+}
+
+.chuxanhdam {
+    font-weight: bold;
+    color: blue;
+}
+
+.img {
+    width: 30px;
+    height: 30px;
+    padding: 15px;
+}
+
+.anhlon {
+    margin-top: 30px;
+    width: 160px;
+    height: 50px;
+}
+
+.footer-top iframe {
+    width: 500px;
+    height: 300px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin: 0 auto;
+}

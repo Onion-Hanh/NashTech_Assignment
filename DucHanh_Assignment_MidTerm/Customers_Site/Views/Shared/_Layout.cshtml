@@ -25,16 +25,18 @@
             <ul>
                 <li><img src="~/lib/img/logo.jpg" /></li>
                 <li>
-                    <input class="nav-input form-control me-2" type="search" placeholder="Bạn đang tìm gì hôm nay..." aria-label="Search">
+                    <form action="@Url.Action("SearchProduct","Home")" method="post">
+                        <input name="search" class="nav-input form-control me-2" type="search" placeholder="Bạn đang tìm gì hôm nay..." aria-label="Search">
+                    </form>                  
                 </li>
-                <li class="search_icon"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></li>
-                <li><a class="li_item" href="#giohang"><i class="fa-sharp fa-solid fa-cart-shopping li_icon"></i>Giỏ hàng </a></li>
+                <li><a class="li_item" href="@Url.Action("Index","Home", new{index=true})"><i class="fa-solid fa-house-chimney li_icon"></i>Trang chủ</a></li>
                 <li><a class="li_item" href=""><i class="fa-solid fa-user li_icon"></i>Đăng nhập</a></li>
+                <li><a class="li_item" href="#giohang"><i class="fa-sharp fa-solid fa-cart-shopping li_icon"></i>Giỏ hàng </a></li>
                 <li><a class="li_item" href="tel:+18006821"><i class="fa-solid fa-phone li_icon"></i>18006821</a></li>
             </ul>
         </nav>
     </header>
-    <div class="content" style="clear:both">
+    <div class="content">
         @RenderBody()
     </div>
     <footer>
@@ -83,7 +85,7 @@
                     <img class="anhlon" src="~/lib/img/khoa.JPG" alt="">
                 </div>
                 <div class="col">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.968509577082!2d106.69537831442258!3d10.813721761462038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528eafd202985%3A0xeb70091a58e68aeb!2zMjQ4QSBOxqEgVHJhbmcgTG9uZywgUGjGsOG7nW5nIDEyLCBCw6xuaCBUaOG6oW5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1664878179905!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.968509577082!2d106.69537831442258!3d10.813721761462038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528eafd202985%3A0xeb70091a58e68aeb!2zMjQ4QSBOxqEgVHJhbmcgTG9uZywgUGjGsOG7nW5nIDEyLCBCw6xuaCBUaOG6oW5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1664878179905!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>

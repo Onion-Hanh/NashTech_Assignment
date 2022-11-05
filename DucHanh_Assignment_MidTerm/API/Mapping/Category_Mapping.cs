@@ -9,6 +9,7 @@ namespace API.Mapping
         public Category_Mapping()
         {
             CreateMap<Category, CategoryDTO>();
+            CreateMap<Category, CategoryAminDTO>();
         }
     }
 }
